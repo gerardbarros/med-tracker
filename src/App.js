@@ -2,12 +2,13 @@ import { useState } from "react"
 import Header from "./components/Header"
 import Tasks from "./components/Tasks"
 import AddTask from "./components/AddTask.js"
+import useLocalStorage from "./hooks/useLocalStorage"
 
 
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useLocalStorage("tasks", [])
 
 // Add Task
 const addTask = (task) => {
